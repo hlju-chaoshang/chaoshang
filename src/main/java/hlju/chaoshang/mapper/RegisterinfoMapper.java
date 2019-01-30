@@ -2,6 +2,8 @@ package hlju.chaoshang.mapper;
 
 import hlju.chaoshang.po.Registerinfo;
 import hlju.chaoshang.po.RegisterinfoExample;
+
+import java.sql.SQLException;
 import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
@@ -68,4 +70,21 @@ public interface RegisterinfoMapper {
      * @mbggenerated
      */
     int updateByExample(@Param("record") Registerinfo record, @Param("example") RegisterinfoExample example);
+
+
+
+
+    /**
+     *功能描述
+     * @author moots
+     * @description 根据姓名查找密码
+     */
+    String selectPasswordByName(@Param("userName")String userName) throws SQLException;
+
+    /**
+     *功能描述
+     * @author moots
+     * @description
+     */
+    String selectPasswordByPhoneNum(@Param("phoneNum")String phoneName) throws SQLException;
 }
